@@ -1,0 +1,73 @@
+body{
+	margin: 0;
+	box-sizing: border-box;
+	background-image: url('dom-manipulation-new.png');
+	background-repeat: no-repeat;
+	background-position: fixed;
+	background-size: 100% 100%;
+	height: fit-content;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main{
+	margin: 2rem;
+	width: 40vw;
+	background-color: white;
+	height: fit-content;
+	border-radius: 10px;
+}
+
+.hTwoElement-class{
+	margin: 5px auto 10px auto;
+	text-align: center;
+}
+
+.section-class{
+	padding: 0.5rem;
+}
+
+.divOne-class{
+	font-size: 1.5rem;
+	padding: 0.5rem;
+	border-bottom: 1px solid black;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+
+.divOne-class::after{
+	content: '+';
+	cursor: pointer;
+}
+
+.divTwo-class{
+	font-size: 1.5rem;
+	line-height: 1.5;
+	width: fit-content;
+	height: 0px;
+	padding: 0 1rem 0 1rem;
+	overflow: hidden;
+	transition: .5s;
+}
+
+.section-class.active .divTwo-class{
+	height: fit-content;
+}
+
+.section-class.active .divOne-class{
+	font-size: 1rem;
+}
+
+.section-class.active .divOne-class::after{
+	content: '-';
+}
+
+
+@media (max-width: 900px) {
+	main{
+		width: 80vw;
+	}
+}
